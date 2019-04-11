@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class sideScrollingCharacterMovement : MonoBehaviour
 {
-    public float playerSpeed; // How much sonic the player is.
     private Rigidbody2D playerRigidbody; // Unity object used to manipulate the physics of things in game.
     private float movementInput; // Stores whether player is pressing left or right.
 
