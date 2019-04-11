@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerController : GridMovable
 {
-    bool canPivot;
-    char lastDir;
+    char lastMove;
+
     // Start is called before the first frame update
     protected override void Start()
     {
-        canPivot = false;
-        lastDir = 'x';
+        lastMove = 'x';
         base.Start();
     }
 
@@ -21,46 +20,21 @@ public class PlayerController : GridMovable
         int x = (int)Input.GetAxisRaw("Horizontal");
         int y = (int)Input.GetAxisRaw("Vertical");
 
-        /* MOVEMENT TWEAKS */
-        if ( x == 0 && y != 0 )
+        if (x != 0 && y != 0)
         {
-            lastDir = 'y';
-            canPivot = true;
-        }
-        if ( x != 0 && y == 0 )
-        {
-            lastDir = 'x';
-            canPivot = true;
-        }
-
-        if (canPivot)
-        {
-            if (x != 0) // horizontal
-            {
-                if (lastDir == 'y')
-                {
-
-                }
-            }
-            if (y != 0) // vertical
-            {
+            if (lastMove == 'x')
                 x = 0;
-            }
+            else if (lastMove == 'y')
+                y = 0;
         }
-
-        if (x != 0 && y != 0) // x AND y
-        {
-            canPivot = false;
-        }
-        if (x == 0 && y == 0)
-        {
-            lastDir = 'x';
-        }
-        /* ### */
 
         // if moving, attempt move
         if ( (x != 0 || y != 0) && !moving )
         {
+            if (x != 0)
+                lastMove = 'x';
+            if (y != 0)
+                lastMove = 'y';
             base.Move(x, y);
         }
     }

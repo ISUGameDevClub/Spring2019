@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class GridMovable : MonoBehaviour
 {
-    public float moveTime = 0.2f; // total movement time in seconds
+    public float moveTime = 0.2f; // total movement time in seconds?
 
     protected bool moving = false;
 
