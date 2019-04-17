@@ -10,10 +10,10 @@ using UnityEngine.UI;
  */
 public class Questgiver : MonoBehaviour
 {
-    public Quest quest;
-    public Player player;
+    private Player player;
 
     public GameObject questWindow;
+    public Quest quest;
     public Text titleText;
     public Text descriptionText;
     public Text experienceText;
@@ -26,7 +26,6 @@ public class Questgiver : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
-        questWindow = GameObject.Find("QuestWindow");
     }
 
     void FixedUpdate()
@@ -55,7 +54,7 @@ public class Questgiver : MonoBehaviour
         Collider2D target = Physics2D.OverlapCircle(gameObject.transform.position, questWindowViewDistance, whatIsPlayer);
         if (target == null && gameObject.GetComponent<Questgiver>().questWindow.activeInHierarchy)
         {
-            cout 
+            Debug.Log("No Players Around");
             CloseQuestWindow();
         }
     }
