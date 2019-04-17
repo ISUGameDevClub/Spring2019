@@ -11,7 +11,8 @@ public static class GameManager
 
     public static void SaveGame()
     {
-        SaveSystem.SaveGame(player.GetComponent<Player>(), player2.GetComponent<Player>());
+        //SaveSystem.SaveGame(player.GetComponent<Player>(), player2.GetComponent<Player>());
+        SaveSystem.SaveGame(player.GetComponent<Player>());
     }
 
     public static void LoadGame()
@@ -28,12 +29,12 @@ public static class GameManager
         player.GetComponent<Player>().transform.position = playerPosition;
 
         //Player 2
-        player2.GetComponent<Player>().level = data.player2Level;
-        player2.GetComponent<Player>().maxHealth = data.player2MaxHealth;
-        player2.GetComponent<Player>().currentHealth = data.player2CurrentHealth;
-        Vector2 player2Position;
-        player2Position.x = data.player2Position[0];
-        player2Position.y = data.player2Position[1];
-        player2.GetComponent<Player>().transform.position = player2Position;
+        //player2.GetComponent<Player>().level = data.player2Level;
+        //player2.GetComponent<Player>().maxHealth = data.player2MaxHealth;
+        //player2.GetComponent<Player>().currentHealth = data.player2CurrentHealth;
+        //Vector2 player2Position;
+        //player2Position.x = data.player2Position[0];
+        //player2Position.y = data.player2Position[1];
+        //player2.GetComponent<Player>().transform.position = player2Position;
     }
 }
