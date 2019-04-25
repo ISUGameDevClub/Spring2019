@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sideScrollingCharacterMovement : MonoBehaviour
+public class SidescrollingCharacterMovement : MonoBehaviour
 {
     public float playerSpeed; // How much sonic the player is.
     private Rigidbody2D playerRigidbody; // Unity object used to manipulate the physics of things in game.
