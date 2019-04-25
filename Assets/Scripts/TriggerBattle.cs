@@ -5,26 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class TriggerBattle : MonoBehaviour
 {
-
-    public Animator animator;
-
-    
-    private Animation Fade_Out;
-
-    private int levelToLoad;
-
     public string sceneToLoad;
+
+    private void Update()
+    {
+        findEnemy();
+    }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.name == "Player")
         {
             Destroy(GameObject.Find("Enemy"));
-            Fade_Out.Play();
-            FadeToLevel(1);
-            Application.LoadLevel(sceneToLoad);
+            LevelChanger.Instance.FadeToLevel(1);
+            //SceneManager.LoadScene(sceneToLoad);
             //LoadBattleScreen();
         }
+    }
+
+    public bool findEnemy()
+    {
+        if (GameObject.Find("Enemy") == false)
+        {
+            return true;
+        }
+        return false;
     }
     
     void LoadBattleScreen()
@@ -34,22 +39,5 @@ public class TriggerBattle : MonoBehaviour
         GameController.control.playerDead = true;
         Application.LoadLevel(sceneToLoad);
     }
-
-    public void FadeToNextLevel()
-    {
-        FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
-        //Application.LoadLevel(sceneToLoad);
-    }
-
-    public void FadeToLevel(int levelIndex)
-    {
-        levelToLoad = levelIndex;
-        animator.SetTrigger("FadeOut");
-        OnFadeComplete();
-    }
-
-    public void OnFadeComplete()
-    {
-        SceneManager.LoadScene(levelToLoad);
-    }
+    
 }
