@@ -13,10 +13,17 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Ground
   - Collidable Objects
   - Questgiver
   - Player
+=======
+  - Collidable
+  - 
+  - 
+  - 
+>>>>>>> njrizo
   - 
   - 
   - 
