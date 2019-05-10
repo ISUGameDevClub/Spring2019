@@ -13,17 +13,10 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
-  - Ground
-  - Collidable Objects
-  - Questgiver
-  - Player
-=======
-  - Collidable
   - 
   - 
   - 
->>>>>>> njrizo
+  - 
   - 
   - 
   - 
@@ -47,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 2759248681
+    locked: 0
+  - name: Player
+    uniqueID: 627984257
+    locked: 0
+  - name: Overhead
+    uniqueID: 4150772123
     locked: 0

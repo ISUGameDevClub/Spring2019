@@ -50,8 +50,11 @@ public class CharacterMovement : MonoBehaviour
             facingUp = false;
             facingDown = false;
             playerSpriteRenderer.sprite = facingRightSprite;
-            newScale.x = 1;
-            transform.localScale = newScale;
+            if(transform.localScale.x < 0)
+            {
+                newScale.x = newScale.x * -1;
+                transform.localScale = newScale;
+            }
         }
         if (movementInputX < 0 && !facingLeft) //Facing left
         {
@@ -60,8 +63,11 @@ public class CharacterMovement : MonoBehaviour
             facingUp = false;
             facingDown = false;
             playerSpriteRenderer.sprite = facingRightSprite;
-            newScale.x = -1;
-            transform.localScale = newScale;
+            if (transform.localScale.x > 0)
+            {
+                newScale.x = newScale.x * -1;
+                transform.localScale = newScale;
+            }
         }
         if (movementInputY > 0 && !facingUp) //Facing up
         {
