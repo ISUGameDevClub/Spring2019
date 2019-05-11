@@ -19,7 +19,7 @@ public class SaveData
     public int player2MaxHealth;
     public float[] player2Position;
 
-    public SaveData(Player player, Player player2) //Include all necessary objects as parameters.
+    public SaveData(Player player) //Include all necessary objects as parameters.
     {
         //Player data...
         playerLevel = player.level;
@@ -31,12 +31,12 @@ public class SaveData
         playerPosition[1] = player.transform.position.y;
 
         //Player 2 data
-        player2Level = player2.level;
-        player2MaxHealth = player2.maxHealth;
-        player2CurrentHealth = player2.currentHealth;
+        //player2Level = player2.level;
+        //player2MaxHealth = player2.maxHealth;
+        //player2CurrentHealth = player2.currentHealth;
 
-        player2Position = new float[2]; //Brackey's tutorial did 3 positions but since we are 2d, we may only need 2?
-        player2Position[0] = player2.transform.position.x;
-        player2Position[1] = player2.transform.position.y;
+        //player2Position = new float[2]; //Brackey's tutorial did 3 positions but since we are 2d, we may only need 2?
+        //player2Position[0] = player2.transform.position.x;
+        //player2Position[1] = player2.transform.position.y;
     }
 }

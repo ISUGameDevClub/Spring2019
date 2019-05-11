@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Quest Giver
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 2759248681
+    locked: 0
+  - name: Entities
+    uniqueID: 1428501191
     locked: 0
   - name: Player
     uniqueID: 627984257
